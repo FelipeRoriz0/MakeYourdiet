@@ -1,0 +1,24 @@
+CREATE DATABASE db_projetoFinal;
+USE db_projetoFinal;
+
+CREATE TABLE tb_usuario(
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   nomeCompleto varchar(60) NOT NULL,
+   email  varchar(60) NOT NULL,
+   senha  varchar(60) NOT NULL,
+   dataNasc  date NOT NULL
+);
+INSERT INTO tb_usuario(nomeCompleto, email, senha, dataNasc) VALUES('Beatriz Moreira', 'bia@email.com ', '1234', '2002/05/27');
+SELECT * FROM tb_usuario; 
+
+CREATE TABLE tb_alimento(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nomeAlimento VARCHAR(60) NOT NULL,
+    id_tipoAlimento INT
+);
+SELECT * FROM tb_alimento;
+
+CREATE TABLE tb_tipoAlimento(
+	id INT PRIMARY KEY AUTO_INCREMENT;
+    
+);
