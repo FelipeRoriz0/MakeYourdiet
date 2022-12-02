@@ -1,5 +1,5 @@
-CREATE DATABASE db_projetoFinal;
-USE db_projetoFinal;
+CREATE DATABASE db_makeYourDiet;
+USE db_makeyourdiet;
 
 CREATE TABLE tb_usuario(
    id INT PRIMARY KEY AUTO_INCREMENT,
@@ -9,16 +9,55 @@ CREATE TABLE tb_usuario(
    dataNasc  date NOT NULL
 );
 INSERT INTO tb_usuario(nomeCompleto, email, senha, dataNasc) VALUES('Beatriz Moreira', 'bia@email.com ', '1234', '2002/05/27');
-SELECT * FROM tb_usuario; 
 
+ /*----------------------------------------------------*/
 CREATE TABLE tb_alimento(
 	id INT PRIMARY KEY AUTO_INCREMENT,
     nomeAlimento VARCHAR(60) NOT NULL,
     id_tipoAlimento INT
+  /*kcal*/
 );
-SELECT * FROM tb_alimento;
 
+ /*----------------------------------------------------*/
 CREATE TABLE tb_tipoAlimento(
-	id INT PRIMARY KEY AUTO_INCREMENT;
+	id INT PRIMARY KEY AUTO_INCREMENT,
+  	categorias VARCHAR(60)
     
+);
+INSERT INTO tb_tipoAlimento(categorias) VALUES ('Carboidrato');
+INSERT INTO tb_tipoAlimento(categorias) VALUES ('Legumes');
+INSERT INTO tb_tipoAlimento(categorias) VALUES ('Vegetais');
+INSERT INTO tb_tipoAlimento(categorias) VALUES ('Proteina');
+
+ /*----------------------------------------------------*/
+CREATE TABLE tb_preferencias(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+  	peso INT,
+  	altura NUMERIC(1,2),
+  	qtd_kal INT,
+  	id_atividades INT
+);/*DUVIDA qual valor devo usar para altura*/
+
+ /*----------------------------------------------------*/
+/*CREATE TABLE tb_atividades(	
+); DUVIDA*/
+
+ /*----------------------------------------------------*/
+CREATE TABLE tb_dieta(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+  	diasSemana VARCHAR(60),
+  	id_refeicao INT
+);
+INSERT INTO tb_dieta(diasSemana) VALUES('Domingo');
+INSERT INTO tb_dieta(diasSemana) VALUES('Segunda-freira');
+INSERT INTO tb_dieta(diasSemana) VALUES('Terça-feira');
+INSERT INTO tb_dieta(diasSemana) VALUES('Quarta-feira');
+INSERT INTO tb_dieta(diasSemana) VALUES('Quinta-feira');
+INSERT INTO tb_dieta(diasSemana) VALUES('Sexta-feira');
+INSERT INTO tb_dieta(diasSemana) VALUES('Sábado');
+
+ /*----------------------------------------------------*/
+CREATE TABLE tb_refeicao(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+  	refeicao VARCHAR(60)
 );
