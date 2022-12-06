@@ -14,8 +14,10 @@ INSERT INTO tb_usuario(nomeCompleto, email, senha, dataNasc) VALUES('Beatriz Mor
 CREATE TABLE tb_alimento(
 	id INT PRIMARY KEY AUTO_INCREMENT,
     nomeAlimento VARCHAR(60) NOT NULL,
+  	kcal NUMERIC(5,2),
     id_tipoAlimento INT
-  /*kcal*/
+  /*verificar como vai ser armazenado os alimentos*/
+  
 );
 
  /*----------------------------------------------------*/
@@ -33,20 +35,20 @@ INSERT INTO tb_tipoAlimento(categorias) VALUES ('Proteina');
 CREATE TABLE tb_preferencias(
 	id INT PRIMARY KEY AUTO_INCREMENT,
   	peso INT,
-  	altura NUMERIC(1,2),
+  	altura NUMERIC(3,2),
   	qtd_kal INT,
+  /*verificar se é necessário gramas por refeição*/
   	id_atividades INT
-);/*DUVIDA qual valor devo usar para altura*/
-
+);
  /*----------------------------------------------------*/
 /*CREATE TABLE tb_atividades(	
 ); DUVIDA*/
 
  /*----------------------------------------------------*/
-CREATE TABLE tb_dieta(
+CREATE TABLE tb_diaSemana(
 	id INT PRIMARY KEY AUTO_INCREMENT,
   	diasSemana VARCHAR(60),
-  	id_refeicao INT
+  	id_dieta INT
 );
 INSERT INTO tb_dieta(diasSemana) VALUES('Domingo');
 INSERT INTO tb_dieta(diasSemana) VALUES('Segunda-freira');
@@ -56,8 +58,18 @@ INSERT INTO tb_dieta(diasSemana) VALUES('Quinta-feira');
 INSERT INTO tb_dieta(diasSemana) VALUES('Sexta-feira');
 INSERT INTO tb_dieta(diasSemana) VALUES('Sábado');
 
- /*----------------------------------------------------*/
-CREATE TABLE tb_refeicao(
+/*----------------------------------------------------*/
+
+CREATE TABLE tb_dieta(
 	id INT PRIMARY KEY AUTO_INCREMENT,
   	refeicao VARCHAR(60)
 );
+
+
+
+
+
+
+
+
+
