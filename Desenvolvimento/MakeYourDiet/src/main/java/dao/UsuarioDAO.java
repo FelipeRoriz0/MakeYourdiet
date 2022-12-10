@@ -10,7 +10,7 @@ import modelo.Usuario;
 public class UsuarioDAO {
 	Connection cnx = null;
 	
-	public Usuario logarUsuario(String login, String senha) {
+	public Usuario logarUsuario(String email, String senha) {
 		Usuario usuario = null; 
 		ResultSet rs = null;
 		
