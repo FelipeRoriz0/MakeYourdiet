@@ -1,9 +1,12 @@
 package controle;
 
 import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpSession;
 import modelo.Usuario;
 
 import java.io.IOException;
+import java.util.Objects;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,18 +43,19 @@ public class LoginServlet extends HttpServlet {
 		String senha = request.getParameter("senha");
 		Usuario u = null;
 		
+		HttpSession session = request.getSession();
+		
 		UsuarioDAO dao = new UsuarioDAO();
 		
 		u = dao.logarUsuario(email, senha);
 		
-		/*
 		if(u != null) {
-			response.sendRedirect("menu.jsp");
-			
+			response.sendRedirect("parteInterno.jsp");
 		}else {
-			response.sendRedirect("erro.jsp");
+			response.sendRedirect("erro.html");
+		}
 		}
 		
-	}*/
+		
 
 }
