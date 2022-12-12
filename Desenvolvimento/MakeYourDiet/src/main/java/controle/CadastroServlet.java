@@ -38,9 +38,9 @@ public class CadastroServlet extends HttpServlet {
 		UsuarioServico servico = new UsuarioServico();
 		
 		u.setNomeCompleto(request.getParameter("nomeCompleto"));
-		u.setNomeCompleto(request.getParameter("email"));
-		u.setNomeCompleto(request.getParameter("senha"));
-		u.setNomeCompleto(request.getParameter("dataNasc"));
+		u.setEmail(request.getParameter("email"));
+		u.setSenha(request.getParameter("senha"));
+		u.setDataNasc(request.getParameter("dataNasc"));
 		
 		if(servico.cadastrar(u)) {
 			response.sendRedirect("parteInterna.jsp");

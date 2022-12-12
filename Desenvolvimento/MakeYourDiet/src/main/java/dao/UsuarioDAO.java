@@ -31,7 +31,7 @@ public class UsuarioDAO {
 				usuario.setNomeCompleto(rs.getString("nomeCompleto"));
 				usuario.setEmail(rs.getString("email"));
 				usuario.setSenha(rs.getString("senha"));
-				usuario.setDataNasc(rs.getString("dataNasc")); //string vs date
+				usuario.setDataNasc(rs.getDate("dataNasc")); //string vs date
 				
 			}
 			
@@ -53,11 +53,10 @@ public boolean cadastrarUsuario(Usuario usuario) {
 	
 	try {
 		PreparedStatement ps = cnx.prepareStatement(sql);
-		int parameterIndex; /*Entender por que pediu pra criar uma variavel*/
-		ps.setString(parameterIndex:1, usuario.getNomeCompleto());
-		ps.setString(parameterIndex:2, usuario.getEmail());
-		ps.setString(parameterIndex:3, usuario.getSenha());
-		ps.setString(parameterIndex:4, usuario.getDataNasc());
+		ps.setString(1, usuario.getNomeCompleto());
+		ps.setString(2, usuario.getEmail());
+		ps.setString(3, usuario.getSenha());
+		ps.setDate(4, usuario.getDataNasc());
 		
 		retornoQuery = ps.executeUpdate();
 		

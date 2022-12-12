@@ -5,7 +5,7 @@ public class Usuario {
 	private String nomeCompleto;
 	private String email;
 	private String senha;
-	private String dataNasc;/*lembrar de aprender como transferir de string pra date 
+	private Date dataNasc;/*lembrar de aprender como transferir de string pra date 
 	quando salvar no banco de dados*/
 	
 	
@@ -33,10 +33,10 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getDataNasc() {
+	public Date getDataNasc() {
 		return dataNasc;
 	}
-	public void setDataNasc(String dataNasc) {
+	public void setDataNasc(Date dataNasc) {
 		this.dataNasc = dataNasc;
 	}
 	
