@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 		u = dao.logarUsuario(email, senha);
 		
 		if(u != null) {
-			response.sendRedirect("parteInterno.jsp");
+			response.sendRedirect("interno.jsp");
 		}else {
 			response.sendRedirect("erro.html");
 		}

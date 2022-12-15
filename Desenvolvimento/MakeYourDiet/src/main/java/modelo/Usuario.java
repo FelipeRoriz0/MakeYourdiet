@@ -1,14 +1,29 @@
 package modelo;
 
+import java.sql.Date;
+
 public class Usuario {
 	private int id;
 	private String nomeCompleto;
 	private String email;
 	private String senha;
-	private Date dataNasc;/*lembrar de aprender como transferir de string pra date 
-	quando salvar no banco de dados*/
+	private Date dataNasc;
+	private int peso;
+	private int altura;
 	
 	
+	public int getPeso() {
+		return peso;
+	}
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+	public int getAltura() {
+		return altura;
+	}
+	public void setAltura(int altura) {
+		this.altura = altura;
+	}
 	public int getId() {
 		return id;
 	}
@@ -39,12 +54,17 @@ public class Usuario {
 	public void setDataNasc(Date dataNasc) {
 		this.dataNasc = dataNasc;
 	}
-	
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nomeCompleto=" + nomeCompleto + ", email=" + email + ", senha=" + senha
-				+ ", dataNasc=" + dataNasc + "]";
+				+ ", dataNasc=" + dataNasc + ", peso=" + peso + ", altura=" + altura + ", getPeso()=" + getPeso()
+				+ ", getAltura()=" + getAltura() + ", getId()=" + getId() + ", getNomeCompleto()=" + getNomeCompleto()
+				+ ", getEmail()=" + getEmail() + ", getSenha()=" + getSenha() + ", getDataNasc()=" + getDataNasc()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
+	
+	
 	
 	
 	

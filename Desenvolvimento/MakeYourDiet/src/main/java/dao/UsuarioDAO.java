@@ -31,7 +31,9 @@ public class UsuarioDAO {
 				usuario.setNomeCompleto(rs.getString("nomeCompleto"));
 				usuario.setEmail(rs.getString("email"));
 				usuario.setSenha(rs.getString("senha"));
-				usuario.setDataNasc(rs.getDate("dataNasc")); //string vs date
+				usuario.setDataNasc(rs.getDate("dataNasc"));
+				usuario.setPeso(rs.getInt("peso"));
+				usuario.setAltura(rs.getInt("altura"));;
 				
 			}
 			
@@ -43,13 +45,14 @@ public class UsuarioDAO {
 		return usuario;
 	}
 	/*CADASTRO-------------------------------------------------------------------------------*/
-public boolean cadastrarUsuario(Usuario usuario) {
+public Usuario cadastrarUsuario(Usuario usuario) {
 	boolean resultado = true;
 	int retornoQuery;
 	
 	cnx = DAO.createConnection();
 	
 	String sql = "INSERT INTO tb_usuario(nomeCompleto, email, senha, dataNasc) VALUES (?,?,?,?)";
+	/*integração de tabelas? como usar a tabela usuário junto com a tabela preferencias*/
 	
 	try {
 		PreparedStatement ps = cnx.prepareStatement(sql);
@@ -57,6 +60,8 @@ public boolean cadastrarUsuario(Usuario usuario) {
 		ps.setString(2, usuario.getEmail());
 		ps.setString(3, usuario.getSenha());
 		ps.setDate(4, usuario.getDataNasc());
+		ps.setInt(5, usuario.getPeso());
+		ps.setInt(6, usuario.getAltura());
 		
 		retornoQuery = ps.executeUpdate();
 		
@@ -66,6 +71,7 @@ public boolean cadastrarUsuario(Usuario usuario) {
 	}catch(SQLException e) {
 		e.printStackTrace();
 	}
+	return usuario;
   }
 }
 
