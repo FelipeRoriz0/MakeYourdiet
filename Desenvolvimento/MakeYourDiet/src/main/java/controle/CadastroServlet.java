@@ -40,10 +40,13 @@ public class CadastroServlet extends HttpServlet {
 		u.setNomeCompleto(request.getParameter("nomeCompleto"));
 		u.setEmail(request.getParameter("email"));
 		u.setSenha(request.getParameter("senha"));
+		u.setSenha(request.getParameter("cel"));
 		u.setDataNasc(request.getParameter("dataNasc"));
-		
+		/*-----duvida-----*/
 		if(servico.cadastrar(u)) {
-			response.sendRedirect("parteInterna.jsp");
+			response.sendRedirect("cadastro.html");
+		}else {
+			
 		}
 	}
 

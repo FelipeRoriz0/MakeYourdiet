@@ -5,11 +5,13 @@ import java.sql.Date;
 public class Usuario {
 	private int id;
 	private String nomeCompleto;
+	private Date dataNasc;
+	private String cel;
 	private String email;
 	private String senha;
-	private Date dataNasc;
 	private int peso;
 	private int altura;
+	
 	
 	
 	public int getPeso() {
@@ -54,6 +56,14 @@ public class Usuario {
 	public void setDataNasc(Date dataNasc) {
 		this.dataNasc = dataNasc;
 	}
+	public String getCel() {
+		return cel;
+	}
+	public void setCel(String cel) {
+		this.cel = cel;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nomeCompleto=" + nomeCompleto + ", email=" + email + ", senha=" + senha
@@ -63,6 +73,7 @@ public class Usuario {
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
 	}
+
 	
 	
 	
