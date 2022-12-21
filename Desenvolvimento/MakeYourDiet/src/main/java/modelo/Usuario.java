@@ -1,6 +1,6 @@
 package modelo;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Usuario {
 	private int id;
@@ -11,8 +11,9 @@ public class Usuario {
 	private String senha;
 	private int peso;
 	private int altura;
-	
-	
+	/*public java.sql.Date convertJavaDateToSqlDate(java.util.Date date) {
+	    return new java.sql.Date(date.getTime());
+	}*/
 	
 	public int getPeso() {
 		return peso;
