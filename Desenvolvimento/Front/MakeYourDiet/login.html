@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>MakeYourDiet</title>
-	
+    <link rel="icon" href="img/logo.png">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	
@@ -39,7 +39,44 @@
 
 
 <body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
-
+<!--Nav-->
+<nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+      <div class="pl-4 flex items-center">
+        <a class="toggleColour  text-blue-800 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="index.html">
+          
+          <img class="h-24 fill-current inline" src="img/logo.png" alt="">
+          MakeYourDiet
+          
+        </a>
+      </div>
+      <div class="block lg:hidden pr-4">
+        <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+        <ul class="list-reset lg:flex justify-end flex-1 items-center">
+          <li class="mr-3">
+            <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="index.html">Início</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">sobre</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="login.html">Login</a>
+          </li>
+        </ul>
+        <a href="cadastro.html"><button class="mx-auto lg:mx-0 hover:underline bg-white text-blue-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          Cadastre-se
+        </button></a>
+      </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+  </nav>
 
     <div class="h-screen pb-14 bg-right bg-cover" style="background-image:url('bg.svg');">
     <section class="h-screen">
@@ -47,7 +84,7 @@
           <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
             <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
               <img
-                src="img/fotodieta.png"
+                src="img/cabecera-dietas.png"
             
                 
               />
@@ -79,23 +116,18 @@
                                             class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                             </div>
                             <div class="flex items-baseline justify-between">
-                                <button class=" w-full px-8 py-2 mt-4   text-white bg-blue-600 rounded-lg hover:bg-blue-900">Login</button>
+                                <input type="submit" value="Login" class=" w-full px-8 py-2 mt-4   text-white bg-blue-600 rounded-lg hover:bg-blue-900"></input>
                                 
                                 
                               
                             </div>
-                            <br>
-                            <hr>
-                        <p class="text-center">OU</p>
-                        </div>
-                        <button class="w-full px-8 py-2 mt-5 text-white bg-blue-600 rounded-lg hover:bg-blue-900 ">Cadastre-se</button>
-                       <a href="index.html"> <button class="w-full px-8 py-2 mt-5 text-white bg-blue-600 rounded-lg hover:bg-blue-900 ">Página inicial</button></a>
+                         
+                    
                     </form>
                 </div>
             </div>
 
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 </body>
