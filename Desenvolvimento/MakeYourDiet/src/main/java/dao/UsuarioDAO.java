@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 import modelo.Usuario;
 
@@ -44,9 +45,15 @@ public class UsuarioDAO {
 		return usuario;
 	}
 	/*CADASTRO-------------------------------------------------------------------------------*/
+
+	public java.sql.Date convertJavaDateToSqlDate(java.util.Date date) {
+	    return new java.sql.Date(date.getTime());
+	}
+	
 public Usuario cadastrarUsuario(Usuario usuario) {
 	boolean resultado = true;
 	int retornoQuery;
+	
 	
 	cnx = DAO.createConnection();
 	
