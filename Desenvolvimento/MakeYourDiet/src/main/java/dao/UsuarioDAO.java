@@ -50,7 +50,7 @@ public class UsuarioDAO {
 	    return new java.sql.Date(date.getTime());
 	}
 	
-public Usuario cadastrarUsuario(Usuario usuario) {
+public Boolean cadastrarUsuario(Usuario usuario) {
 	boolean resultado = true;
 	int retornoQuery;
 	
@@ -65,7 +65,7 @@ public Usuario cadastrarUsuario(Usuario usuario) {
 		ps.setString(1, usuario.getNomeCompleto());
 		ps.setString(2, usuario.getEmail());
 		ps.setString(3, usuario.getSenha());
-		ps.setDate(4, usuario.getDataNasc());
+		ps.setDate(4, convertJavaDateToSqlDate(usuario.getDataNasc()));
 		
 		retornoQuery = ps.executeUpdate();
 		
@@ -75,7 +75,7 @@ public Usuario cadastrarUsuario(Usuario usuario) {
 	}catch(SQLException e) {
 		e.printStackTrace();
 	}
-	return usuario;
+	return resultado;
   }
 }
 

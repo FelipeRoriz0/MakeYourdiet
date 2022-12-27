@@ -10,7 +10,7 @@ public class UsuarioServico {
 		return usuario.logarUsuario(email,senha);
 	}
 	
-	public Usuario cadastrar(Usuario u) {
+	public Boolean cadastrar(Usuario u) {
 		return usuario.cadastrarUsuario(u);
 	}
 	

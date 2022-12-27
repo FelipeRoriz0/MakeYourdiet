@@ -6,10 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>MakeYourDiet</title>
-    <link rel="icon" href="img/logo.png">
+	
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	
+    <link rel="icon" href="img/logo.png">
      
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 	
@@ -39,6 +39,7 @@
 
 
 <body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
+
 <!--Nav-->
 <nav id="header" class="fixed w-full z-30 top-0 text-white">
     <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
@@ -77,14 +78,13 @@
     </div>
     <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
   </nav>
-
     <div class="h-screen pb-14 bg-right bg-cover" style="background-image:url('bg.svg');">
     <section class="h-screen">
         <div class="container px-6 py-12 h-full">
           <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
             <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
               <img
-                src="img/cabecera-dietas.png"
+                src="img/garfo-removebg-preview.png"
             
                 
               />
@@ -101,120 +101,136 @@
                                 d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-center">Login</h3>
-                    <form action="LoginServlet" method="post">
+                    <h3 class="text-2xl font-bold text-center">Cadastro</h3>
+                    <form action="CadastroServlet" method="post">
+
+
+                        <div class="mt-4">
+                            <label class="block">Nome Completo<label>
+                                    <input type="text" placeholder="Nome"
+                                        class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="block">Data de Nascimento<label>
+                                    <input type="date" placeholder="00/00/00"
+                                        class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                        </div>
+                        
+                        <div class="mt-4">
+                            <label class="block">Celular/Tel<label>
+                                    <input type="number" placeholder="(00)00000-000"
+                                        class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                        </div>
+
                         <div class="mt-4">
                             <div>
                                 <label class="block" for="email">Email<label>
                                         <input type="text" placeholder="Email"
                                             class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
-                                        <span class="text-xs tracking-wide text-black-600">preencher os dados corretamente</span>
+                                        
                             </div>
                             <div class="mt-4">
                                 <label class="block">Senha<label>
                                         <input type="password" placeholder="********"
                                             class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                                            <span class="text-xs tracking-wide text-black-600">preencher os dados corretamente</span>
                             </div>
+                            
+
+
+                            
                             <div class="flex items-baseline justify-between">
-                                <input type="submit" value="Login" class=" w-full px-8 py-2 mt-4   text-white bg-blue-600 rounded-lg hover:bg-blue-900"></input>
+                                <input type="submit" value="Efetuar Cadastro" class=" w-full px-8 py-2 mt-4   text-white bg-blue-600 rounded-lg hover:bg-blue-900"></input>
                                 
                                 
                               
                             </div>
-                         
-                    
-                    </form>
-                </div>
-            </div>
+                   
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
-
-            <script>
-              var scrollpos = window.scrollY;
-              var header = document.getElementById("header");
-              var navcontent = document.getElementById("nav-content");
-              var navaction = document.getElementById("navAction");
-              var brandname = document.getElementById("brandname");
-              var toToggle = document.querySelectorAll(".toggleColour");
-            
-              document.addEventListener("scroll", function () {
-                /*Apply classes for slide in bar*/
-                scrollpos = window.scrollY;
-            
-                if (scrollpos > 10) {
-                header.classList.add("bg-white");
-                navaction.classList.remove("bg-white");
-                navaction.classList.add("gradient");
-                navaction.classList.remove("text-gray-800");
-                navaction.classList.add("text-white");
-                //Use to switch toggleColour colours
-                for (var i = 0; i < toToggle.length; i++) {
-                  toToggle[i].classList.add("text-gray-800");
-                  toToggle[i].classList.remove("text-white");
-                }
-                header.classList.add("shadow");
-                navcontent.classList.remove("bg-gray-100");
-                navcontent.classList.add("bg-white");
-                } else {
-                header.classList.remove("bg-white");
-                navaction.classList.remove("gradient");
-                navaction.classList.add("bg-white");
-                navaction.classList.remove("text-white");
-                navaction.classList.add("text-gray-800");
-                //Use to switch toggleColour colours
-                for (var i = 0; i < toToggle.length; i++) {
-                  toToggle[i].classList.add("text-white");
-                  toToggle[i].classList.remove("text-gray-800");
-                }
-            
-                header.classList.remove("shadow");
-                navcontent.classList.remove("bg-white");
-                navcontent.classList.add("bg-gray-100");
-                }
-              });
-              </script>
-              <script>
-            
-            
-              var navMenuDiv = document.getElementById("nav-content");
-              var navMenu = document.getElementById("nav-toggle");
-            
-              document.onclick = check;
-              function check(e) {
-                var target = (e && e.target) || (event && event.srcElement);
-            
-                //Nav Menu
-                if (!checkParent(target, navMenuDiv)) {
-                // click NOT on the menu
-                if (checkParent(target, navMenu)) {
-                  // click on the link
-                  if (navMenuDiv.classList.contains("hidden")) {
-                  navMenuDiv.classList.remove("hidden");
-                  } else {
-                  navMenuDiv.classList.add("hidden");
-                  }
-                } else {
-                  // click both outside link and outside menu, hide menu
-                  navMenuDiv.classList.add("hidden");
-                }
-                }
-              }
-              function checkParent(t, elm) {
-                while (t.parentNode) {
-                if (t == elm) {
-                  return true;
-                }
-                t = t.parentNode;
-                }
-                return false;
-              }
-              </script>
-
-
-
-
+  <script>
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var navaction = document.getElementById("navAction");
+    var brandname = document.getElementById("brandname");
+    var toToggle = document.querySelectorAll(".toggleColour");
+  
+    document.addEventListener("scroll", function () {
+      /*Apply classes for slide in bar*/
+      scrollpos = window.scrollY;
+  
+      if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      navaction.classList.remove("bg-white");
+      navaction.classList.add("gradient");
+      navaction.classList.remove("text-gray-800");
+      navaction.classList.add("text-white");
+      //Use to switch toggleColour colours
+      for (var i = 0; i < toToggle.length; i++) {
+        toToggle[i].classList.add("text-gray-800");
+        toToggle[i].classList.remove("text-white");
+      }
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+      } else {
+      header.classList.remove("bg-white");
+      navaction.classList.remove("gradient");
+      navaction.classList.add("bg-white");
+      navaction.classList.remove("text-white");
+      navaction.classList.add("text-gray-800");
+      //Use to switch toggleColour colours
+      for (var i = 0; i < toToggle.length; i++) {
+        toToggle[i].classList.add("text-white");
+        toToggle[i].classList.remove("text-gray-800");
+      }
+  
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+      }
+    });
+    </script>
+    <script>
+  
+  
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+  
+    document.onclick = check;
+    function check(e) {
+      var target = (e && e.target) || (event && event.srcElement);
+  
+      //Nav Menu
+      if (!checkParent(target, navMenuDiv)) {
+      // click NOT on the menu
+      if (checkParent(target, navMenu)) {
+        // click on the link
+        if (navMenuDiv.classList.contains("hidden")) {
+        navMenuDiv.classList.remove("hidden");
+        } else {
+        navMenuDiv.classList.add("hidden");
+        }
+      } else {
+        // click both outside link and outside menu, hide menu
+        navMenuDiv.classList.add("hidden");
+      }
+      }
+    }
+    function checkParent(t, elm) {
+      while (t.parentNode) {
+      if (t == elm) {
+        return true;
+      }
+      t = t.parentNode;
+      }
+      return false;
+    }
+    </script>
 </body>
 
 </html>

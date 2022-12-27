@@ -11,9 +11,6 @@ public class Usuario {
 	private String senha;
 	private int peso;
 	private int altura;
-	/*public java.sql.Date convertJavaDateToSqlDate(java.util.Date date) {
-	    return new java.sql.Date(date.getTime());
-	}*/
 	
 	public int getPeso() {
 		return peso;

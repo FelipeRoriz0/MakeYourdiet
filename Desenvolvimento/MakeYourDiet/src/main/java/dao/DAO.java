@@ -14,7 +14,7 @@ public class DAO {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
-			url = "jdbc:mysql://localhost:3306/db_makeYourDiet";
+			url = "jdbc:mysql://localhost:3306/db_makeyourdiet";
 			user = "root";
 			password = "172022gbia@1006";
 			

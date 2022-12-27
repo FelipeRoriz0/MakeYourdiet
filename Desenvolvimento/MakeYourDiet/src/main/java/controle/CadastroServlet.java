@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,6 +18,7 @@ import servico.UsuarioServico;
 /**
  * Servlet implementation class CadastroServlet
  */
+@WebServlet("/CadastroServlet")
 public class CadastroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -59,9 +61,8 @@ public class CadastroServlet extends HttpServlet {
 		u.setSenha(request.getParameter("cel"));
 		u.setDataNasc(date);
 		
-		/*--------duvida----------------*/
 		if(servico.cadastrar(u)) {
-			response.sendRedirect("cadastro.html");
+			response.sendRedirect("sucesso.html");
 		}
 	}
 

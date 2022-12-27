@@ -5,6 +5,7 @@ import java.util.Objects;
 
 import dao.UsuarioDAO;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,6 +15,7 @@ import modelo.Usuario;
 /**
  * Servlet implementation class Login
  */
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -49,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if(!Objects.isNull(u)) {
 			session.setAttribute("usuarioSession", u.getNomeCompleto());
-			response.sendRedirect("login.html");
+			response.sendRedirect("sucesso.html");
 		}else {
 			response.sendRedirect("erro.html");
 		}
