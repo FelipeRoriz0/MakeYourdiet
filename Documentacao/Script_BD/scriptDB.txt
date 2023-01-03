@@ -1,75 +1,79 @@
-CREATE DATABASE db_makeYourDiet;
-USE db_makeyourdiet;
+CREATE DATABASE db_projeto;
+USE db_projeto;
 
-CREATE TABLE tb_usuario(
-   id INT PRIMARY KEY AUTO_INCREMENT,
-   nomeCompleto varchar(60) NOT NULL,
-   email  varchar(60) NOT NULL,
-   senha  varchar(60) NOT NULL,
-   dataNasc  date NOT NULL
+CREATE TABLE tb_user(
+	id INT PRIMARY KEY AUTO_INCREMENT, 
+    nomeCompleto varchar(60) NOT NULL,
+    dataNasc DATE NOT NULL, 
+    cel varchar(60) NOT NUll,
+    email varchar(60) NOT NULL,
+    senha varchar(60) NOT NUll
 );
-INSERT INTO tb_usuario(nomeCompleto, email, senha, dataNasc) VALUES('Beatriz Moreira', 'bia@email.com ', '1234', '2002/05/27');
+SELECT * FROM tb_user;
+ALTER TABLE tb_user ADD COLUMN id_tipoReceita INT;
+ALTER TABLE tb_user ADD CONSTRAINT fk_tipoReceita FOREIGN KEY(id_tipoReceita) REFERENCES tb_tipoReceita(id);
+INSERT INTO tb_user(nomeCompleto, dataNasc, cel, email, senha) VALUES('Administrador', '2002/05/27', '(21)991789359', 'admin@gamil.com', '12345');
 
- /*----------------------------------------------------*/
-CREATE TABLE tb_alimento(
-	id INT PRIMARY KEY AUTO_INCREMENT,
-    nomeAlimento VARCHAR(60) NOT NULL,
-  	kcal NUMERIC(5,2),
-    id_tipoAlimento INT
-  /*verificar como vai ser armazenado os alimentos*/
-  
+CREATE TABLE tb_tipoReceita(
+	id int primary key auto_increment,
+    tipo varchar(60) not null
 );
+SELECT * FROM tb_tipoReceita;
+INSERT INTO tb_tipoReceita(tipo) VALUES('emagrecimento');
+INSERT INTO tb_tipoReceita(tipo) VALUES('ganho de massa');
 
- /*----------------------------------------------------*/
-CREATE TABLE tb_tipoAlimento(
-	id INT PRIMARY KEY AUTO_INCREMENT,
-  	categorias VARCHAR(60)
-    
+
+create table tb_agenda(
+	id int primary key auto_increment,
+    dias varchar(20) not null
 );
-INSERT INTO tb_tipoAlimento(categorias) VALUES ('Carboidrato');
-INSERT INTO tb_tipoAlimento(categorias) VALUES ('Legumes');
-INSERT INTO tb_tipoAlimento(categorias) VALUES ('Vegetais');
-INSERT INTO tb_tipoAlimento(categorias) VALUES ('Proteina');
+select * from tb_agenda;
+ALTER TABLE tb_agenda ADD COLUMN id_user INT;
+ALTER TABLE tb_agenda ADD CONSTRAINT fk_user1 FOREIGN KEY(id_user) REFERENCES tb_user(id);
+ALTER TABLE tb_agenda ADD COLUMN id_receitas INT;
+ALTER TABLE tb_agenda ADD CONSTRAINT fk_receitas1 FOREIGN KEY(id_receitas) REFERENCES tb_receitas(id);
+INSERT INTO tb_agenda(dias) VALUES('segunda-feira');
+INSERT INTO tb_agenda(dias) VALUES('terça-feira');
+INSERT INTO tb_agenda(dias) VALUES('quarta-feira');
+INSERT INTO tb_agenda(dias) VALUES('quinta-feira');
+INSERT INTO tb_agenda(dias) VALUES('sexta-feira');
+INSERT INTO tb_agenda(dias) VALUES('sábado');
+INSERT INTO tb_agenda(dias) VALUES('domingo');
 
- /*----------------------------------------------------*/
-CREATE TABLE tb_preferencias(
-	id INT PRIMARY KEY AUTO_INCREMENT,
-  	peso INT,
-  	altura NUMERIC(3,2),
-  	qtd_kal INT,
-  /*verificar se é necessário gramas por refeição*/
-  	id_atividades INT
+create table tb_receitas(
+	id int primary key auto_increment,
+    receita varchar(200) not null    
 );
- /*----------------------------------------------------*/
-/*CREATE TABLE tb_atividades(	
-); DUVIDA*/
+select * from tb_receitas;
+/*ALTER TABLE tb_receitas ADD COLUMN id_tipoReceita INT;
+ALTER TABLE tb_receitas ADD CONSTRAINT fk_tipoReceita1 FOREIGN KEY(id_tipoReceita) REFERENCES tb_tipoReceita(id);*/
 
- /*----------------------------------------------------*/
-CREATE TABLE tb_diaSemana(
-	id INT PRIMARY KEY AUTO_INCREMENT,
-  	diasSemana VARCHAR(60),
-  	id_dieta INT
+create table tb_intemReceita(
+	id int primary key auto_increment
 );
-INSERT INTO tb_dieta(diasSemana) VALUES('Domingo');
-INSERT INTO tb_dieta(diasSemana) VALUES('Segunda-freira');
-INSERT INTO tb_dieta(diasSemana) VALUES('Terça-feira');
-INSERT INTO tb_dieta(diasSemana) VALUES('Quarta-feira');
-INSERT INTO tb_dieta(diasSemana) VALUES('Quinta-feira');
-INSERT INTO tb_dieta(diasSemana) VALUES('Sexta-feira');
-INSERT INTO tb_dieta(diasSemana) VALUES('Sábado');
+select * from tb_intemReceita;
+ALTER TABLE tb_intemReceita ADD COLUMN id_receitas INT;
+ALTER TABLE tb_intemReceita ADD CONSTRAINT fk_receitas2 FOREIGN KEY(id_receitas) REFERENCES tb_receitas(id) ON DELETE CASCADE;
+ALTER TABLE tb_intemReceita ADD COLUMN id_alimento INT;
+ALTER TABLE tb_intemReceita ADD CONSTRAINT fk_alimento FOREIGN KEY(id_alimento) REFERENCES tb_alimento(id) ON DELETE CASCADE;
 
-/*----------------------------------------------------*/
-
-CREATE TABLE tb_dieta(
-	id INT PRIMARY KEY AUTO_INCREMENT,
-  	refeicao VARCHAR(60)
+create table tb_alimento(
+	id int primary key auto_increment,
+    nome varchar(60) not null
 );
+select * from tb_alimento; 
+ALTER TABLE tb_alimento ADD COLUMN id_tipoAlimento INT;
+ALTER TABLE tb_alimento ADD CONSTRAINT fk_tipoAlimento FOREIGN KEY(id_tipoAlimento) REFERENCES tb_tipoAlimento(id) ON DELETE CASCADE;
 
-
-
-
-
-
-
-
-
+create table tb_tipoAlimento(
+ id int primary key auto_increment, 
+ categorias varchar(20) not null
+ );
+ select * from tb_tipoAlimento;
+ INSERT INTO tb_tipoAlimento(categorias) VALUES('carboidratos');
+ INSERT INTO tb_tipoAlimento(categorias) VALUES('proteinas');
+ INSERT INTO tb_tipoAlimento(categorias) VALUES('laticinios');
+ INSERT INTO tb_tipoAlimento(categorias) VALUES('verduras');
+ INSERT INTO tb_tipoAlimento(categorias) VALUES('legumes');
+ INSERT INTO tb_tipoAlimento(categorias) VALUES('frutas');
+ 
