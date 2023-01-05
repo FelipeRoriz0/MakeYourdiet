@@ -26,7 +26,7 @@ INSERT INTO tb_user(nomeCompleto, dataNasc, cel, email, senha, id_tipoReceita) V
 
 
 /*Receitas-------------*/
-INSERT INTO tb_receitas(nomeReceita, receita, id_tipoReceita) VALUES('bolo de banana lowcarb', '2 bananas, 1 ovo, 1/2 farinha aveia, etc', 1); 
+INSERT INTO tb_receitas(nomeReceita, receita, preparo, id_tipoReceita) VALUES('bolo de banana lowcarb', '2 bananas, 1 ovo, 1/2 farinha aveia, etc', 'leve ao forno em 180°C por 30 min', 1); 
 
 /*Alimentos---------*/
 INSERT INTO tb_alimento(nome, id_TipoAlimento) VALUES('arroz', 1);
