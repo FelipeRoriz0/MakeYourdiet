@@ -1,4 +1,12 @@
 Use db_projeto;
+/*Dias da Semana----------*/
+INSERT INTO tb_diasDaSemana(dias) VALUES('segunda-feira');
+INSERT INTO tb_diasDaSemana(dias) VALUES('terça-feira');
+INSERT INTO tb_diasDaSemana(dias) VALUES('quarta-feira');
+INSERT INTO tb_diasDaSemana(dias) VALUES('quinta-feira');
+INSERT INTO tb_diasDaSemana(dias) VALUES('sexta-feira');
+INSERT INTO tb_diasDaSemana(dias) VALUES('sábado');
+INSERT INTO tb_diasDaSemana(dias) VALUES('domingo');
 
 /*Tipo Receita----------*/
 INSERT INTO tb_tipoReceita(tipo) VALUES('emagrecimento');
@@ -36,11 +44,11 @@ INSERT INTO tb_itemReceita(id_receitas, id_alimento) VALUES(1, 7);
 INSERT INTO tb_itemReceita(id_receitas, id_alimento) VALUES(1, 8);
 
 /*Agenda---------*/
-INSERT INTO tb_agenda(dias, id_user, id_receitas) VALUES('segunda-feira', 1, 1);
-INSERT INTO tb_agenda(dias, id_user, id_receitas) VALUES('terça-feira',1, 1);
-INSERT INTO tb_agenda(dias, id_user, id_receitas) VALUES('quarta-feira',1, 1);
-INSERT INTO tb_agenda(dias, id_user, id_receitas) VALUES('quinta-feira',1, 1);
-INSERT INTO tb_agenda(dias, id_user, id_receitas)VALUES('sexta-feira',1, 1);
-INSERT INTO tb_agenda(dias, id_user, id_receitas) VALUES('sábado',1, 1);
-INSERT INTO tb_agenda(dias, id_user, id_receitas) VALUES('domingo',1, 1);
+INSERT INTO tb_agenda(id_user, id_receitas, id_diasDaSemana) VALUES(1, 1, 1);
+INSERT INTO tb_agenda(id_user, id_receitas, id_diasDaSemana) VALUES(1, 1, 2);
+INSERT INTO tb_agenda(id_user, id_receitas, id_diasDaSemana) VALUES(1, 1, 3);
+INSERT INTO tb_agenda(id_user, id_receitas, id_diasDaSemana) VALUES(1, 1,4);
+INSERT INTO tb_agenda(id_user, id_receitas, id_diasDaSemana) VALUES(1, 1, 5);
+INSERT INTO tb_agenda(id_user, id_receitas, id_diasDaSemana) VALUES(1, 1, 6);
+INSERT INTO tb_agenda(id_user, id_receitas, id_diasDaSemana) VALUES(1, 1, 7);
  
