@@ -23,8 +23,8 @@ create table tb_agenda(
 create table tb_receitas(
 	id int primary key auto_increment,
     nomeReceita varchar (100) not null,
-    receita varchar(200) not null,
-    preparo varchar(200) not null
+    receita varchar(500) not null,
+    preparo varchar(500) not null
 );
 
 create table tb_itemReceita(
