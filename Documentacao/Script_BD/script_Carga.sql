@@ -13,15 +13,15 @@ INSERT INTO tb_tipoReceita(tipo) VALUES('emagrecimento');
 INSERT INTO tb_tipoReceita(tipo) VALUES('ganho de massa');
 
 /*Tipo Alimento------------*/
- INSERT INTO tb_tipoAlimento(categorias) VALUES('carboidratos');
- INSERT INTO tb_tipoAlimento(categorias) VALUES('proteinas');
+ INSERT INTO tb_tipoAlimento(categorias) VALUES('cereais e derivados');
+ INSERT INTO tb_tipoAlimento(categorias) VALUES('carnes');
  INSERT INTO tb_tipoAlimento(categorias) VALUES('laticinios');
  INSERT INTO tb_tipoAlimento(categorias) VALUES('verduras');
  INSERT INTO tb_tipoAlimento(categorias) VALUES('legumes');
  INSERT INTO tb_tipoAlimento(categorias) VALUES('frutas');
 
 /*User --------------------*/
-INSERT INTO tb_user(nomeCompleto, dataNasc, cel, email, senha, id_tipoReceita) VALUES('Administrador', '2002/05/27', '(21)991789359', 'admin@gamil.com', '12345', 1);
+INSERT INTO tb_user(nomeCompleto, dataNasc, cel, email, senha, id_tipoReceita) VALUES('Administrador', '2002/05/27', '(21)991789359', 'admin@gmail.com', '12345', 1);
 INSERT INTO tb_user(nomeCompleto, dataNasc, cel, email, senha, id_tipoReceita) VALUES('Beatriz', '2002/05/27', '(21)991789359', 'beatriz@gamil.com', '12345', 2);
 
 /*Alimento --------------*/
