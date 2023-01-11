@@ -3,12 +3,16 @@ package modelo;
 import java.util.Date;
 
 public class Usuario {
+	
+	
 	private int id;
 	private String nomeCompleto;
 	private Date dataNasc;
 	private String cel;
 	private String email;
 	private String senha;
+	private TipoReceita tipoReceita;
+	
 	
 	public int getId() {
 		return id;
@@ -46,18 +50,21 @@ public class Usuario {
 	public void setCel(String cel) {
 		this.cel = cel;
 	}
-	@Override
-	public String toString() {
-		return "Usuario [id=" + id + ", nomeCompleto=" + nomeCompleto + ", dataNasc=" + dataNasc + ", cel=" + cel
-				+ ", email=" + email + ", senha=" + senha + "]";
+	public TipoReceita getTipoReceita() {
+		return tipoReceita;
 	}
-	
-	
+	public void setTipoReceita(TipoReceita tipoReceita) {
+		this.tipoReceita = tipoReceita;
+	}
 
-
-	
-	
-	
-	
-	
 }
+	
+	
+
+
+	
+	
+	
+	
+
+

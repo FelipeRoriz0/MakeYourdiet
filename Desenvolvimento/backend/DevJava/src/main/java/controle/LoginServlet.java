@@ -50,8 +50,10 @@ public class LoginServlet extends HttpServlet {
 		
 		u = dao.logarUsuario(email, senha);
 		
+		System.out.println(u.getNomeCompleto());/*testar a busca do nome*/
+		
 		if(!Objects.isNull(u)) {
-			session.setAttribute("usuarioSession", u.getNomeCompleto());
+			session.setAttribute("usuarioSession", u);
 			response.sendRedirect("sucesso.html");
 			
 		}else {

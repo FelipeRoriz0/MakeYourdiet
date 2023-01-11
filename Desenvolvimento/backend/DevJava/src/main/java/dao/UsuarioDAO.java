@@ -34,6 +34,7 @@ public class UsuarioDAO {
 				usuario.setSenha(rs.getString("senha"));
 				usuario.setCel(rs.getString("cel"));
 				usuario.setDataNasc(rs.getDate("dataNasc"));
+				usuario.getTipoReceita.setId(rs.getInt("id_tipoReceita"));
 				
 			}
 			
@@ -57,15 +58,18 @@ public Boolean cadastrarUsuario(Usuario usuario) {
 	
 	cnx = DAO.createConnection();
 	
-	String sql = "INSERT INTO tb_user(nomeCompleto, dataNasc, cel, email, senha) VALUES (?,?,?,?,?)";
+	String sql = "INSERT INTO tb_user(nomeCompleto, dataNasc, cel, email, senha, id_tipoReceita) VALUES (?,?,?,?,?,?)";
 	
 	
 	try {
 		PreparedStatement ps = cnx.prepareStatement(sql);
 		ps.setString(1, usuario.getNomeCompleto());
-		ps.setString(2, usuario.getEmail());
-		ps.setString(3, usuario.getSenha());
-		ps.setDate(4, convertJavaDateToSqlDate(usuario.getDataNasc()));
+		ps.setDate(2, convertJavaDateToSqlDate(usuario.getDataNasc()));
+		ps.setString(3, usuario.getCel());
+		ps.setString(4, usuario.getEmail());
+		ps.setString(5, usuario.getSenha());
+		ps.setInt(6, usuario.getTipoReceita().getId());
+		
 		
 		retornoQuery = ps.executeUpdate();
 		
